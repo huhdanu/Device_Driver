@@ -1,0 +1,213 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: DANH NGUYEN HUU, ABC, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      PEMicro\Pemicro_ArmCortexInterface.dll V1.3.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+E:\Embedded_training\Module_MCP\src\main\main.uvprojx
+Project File Date:  01/06/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+main.c(73): warning: no previous extern declaration for non-static variable 'g_RCF' [-Wmissing-variable-declarations]
+char g_RCF = 0;                                                                                                                         // Receive Complete Flag in Slave
+     ^
+main.c(73): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char g_RCF = 0;                                                                                                                         // Receive Complete Flag in Slave
+^
+main.c(126): warning: passing 'volatile char[12]' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                        f_SentStringUART(g_Time);
+                                         ^~~~~~
+./../Lib/func_s32k1xx.h(42): note: passing argument to parameter 'string' here
+void f_SentStringUART(char* string);
+                            ^
+main.c(130): warning: passing 'volatile char[12]' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                                f_SentClockMAX7219(g_Time);
+                                                   ^~~~~~
+./../Lib/func_s32k1xx.h(75): note: passing argument to parameter 'clock' here
+void f_SentClockMAX7219(char* clock);
+                              ^
+main.c(133): warning: passing 'volatile char[12]' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                                f_SentDateMAX7219(g_Date);      
+                                                  ^~~~~~
+./../Lib/func_s32k1xx.h(74): note: passing argument to parameter 'date' here
+void f_SentDateMAX7219(char* date);
+                             ^
+main.c(144): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'char' [-Wimplicit-int-conversion]
+                g_flagReceive = LPUART2->DATA;
+                              ~ ~~~~~~~~~^~~~
+main.c(145): warning: passing 'volatile char[12]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                if(g_flagReceive == 'd')   memset(g_Date,0,12);
+                                                  ^~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
+extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+                                        ^
+main.c(146): warning: passing 'volatile char[12]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                if(g_flagReceive == 't')   memset(g_Time,0,12);
+                                                  ^~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
+extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+                                        ^
+main.c(153): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'char' [-Wimplicit-int-conversion]
+                        tempReceive = LPUART2->DATA;
+                                    ~ ~~~~~~~~~^~~~
+main.c(161): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'char' [-Wimplicit-int-conversion]
+                        tempReceive = LPUART2->DATA;
+                                    ~ ~~~~~~~~~^~~~
+main.c(150): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        char tempReceive;
+             ^
+main.c(174): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'char' [-Wimplicit-int-conversion]
+                g_flagReceive = LPUART1->DATA;
+                              ~ ~~~~~~~~~^~~~
+main.c(175): warning: passing 'volatile char[12]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                if(g_flagReceive == 'd') memset(g_Date,0,12);
+                                                ^~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
+extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+                                        ^
+main.c(176): warning: passing 'volatile char[12]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                if(g_flagReceive == 't') memset(g_Time,0,12);
+                                                ^~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
+extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+                                        ^
+main.c(181): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'char' [-Wimplicit-int-conversion]
+                        tempReceive = LPUART1->DATA;
+                                    ~ ~~~~~~~~~^~~~
+main.c(189): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'char' [-Wimplicit-int-conversion]
+                        tempReceive = LPUART1->DATA;
+                                    ~ ~~~~~~~~~^~~~
+main.c(238): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        uint8_t VolValue = ((uint32_t)ADCValue/0xFFF)*(100*Vref);               
+                ~~~~~~~~   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+main.c(237): warning: unused function 'f_ADC4MAX7219' [-Wunused-function]
+void f_ADC4MAX7219(uint32_t ADCValue, uint8_t Vref){
+     ^
+17 warnings generated.
+compiling main.c...
+compiling system_S32K144.c...
+compiling startup.c...
+../Lib/func_s32k1xx.c(9): warning: no previous extern declaration for non-static variable 'g_Date' [-Wmissing-variable-declarations]
+volatile char g_Date[12] = {0};
+              ^
+../Lib/func_s32k1xx.c(9): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+volatile char g_Date[12] = {0};
+         ^
+../Lib/func_s32k1xx.c(10): warning: no previous extern declaration for non-static variable 'g_hour' [-Wmissing-variable-declarations]
+char g_hour = 23;
+     ^
+../Lib/func_s32k1xx.c(10): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char g_hour = 23;
+^
+../Lib/func_s32k1xx.c(11): warning: no previous extern declaration for non-static variable 'g_minute' [-Wmissing-variable-declarations]
+char g_minute = 59;
+     ^
+../Lib/func_s32k1xx.c(11): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char g_minute = 59;
+^
+../Lib/func_s32k1xx.c(12): warning: no previous extern declaration for non-static variable 'g_second' [-Wmissing-variable-declarations]
+char g_second = 50;
+     ^
+../Lib/func_s32k1xx.c(12): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char g_second = 50;
+^
+../Lib/func_s32k1xx.c(13): warning: no previous extern declaration for non-static variable 'g_type' [-Wmissing-variable-declarations]
+char g_type = 0;                                                                        // select type 12h or 24h
+     ^
+../Lib/func_s32k1xx.c(13): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char g_type = 0;                                                                        // select type 12h or 24h
+^
+../Lib/func_s32k1xx.c(14): warning: no previous extern declaration for non-static variable 'g_day' [-Wmissing-variable-declarations]
+char g_day = 1;
+     ^
+../Lib/func_s32k1xx.c(14): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char g_day = 1;
+^
+../Lib/func_s32k1xx.c(15): warning: no previous extern declaration for non-static variable 'g_month' [-Wmissing-variable-declarations]
+char g_month = 1;
+     ^
+../Lib/func_s32k1xx.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char g_month = 1;
+^
+../Lib/func_s32k1xx.c(16): warning: no previous extern declaration for non-static variable 'g_year' [-Wmissing-variable-declarations]
+int g_year = 1971;
+    ^
+../Lib/func_s32k1xx.c(16): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int g_year = 1971;
+^
+../Lib/func_s32k1xx.c(412): warning: explicitly assigning value of variable of type 'uint32_t' (aka 'unsigned int') to itself [-Wself-assign]
+        (ValueSet>=LIMITCOUNT24BIT)?(ValueSet=LIMITCOUNT24BIT):(ValueSet=ValueSet);
+                                                                ~~~~~~~~^~~~~~~~~
+../Lib/func_s32k1xx.c(914): warning: implicit conversion turns floating-point number into integer: 'float' to 'uint32_t' (aka 'unsigned int') [-Wfloat-conversion]
+        uint32_t VolValue = ((float)ADCValue/0xFFF)*100*Vref;                                   // 5V Vref
+                 ~~~~~~~~   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+../Lib/func_s32k1xx.c(937): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        char flag_date = 0;
+             ^
+../Lib/func_s32k1xx.c(8): warning: no previous extern declaration for non-static variable 'g_Time' [-Wmissing-variable-declarations]
+volatile char g_Time[12];
+              ^
+../Lib/func_s32k1xx.c(8): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+volatile char g_Time[12];
+         ^
+12 warnings generated.
+compiling func_s32k1xx.c...
+assembling startup_S32K144.S...
+linking...
+Program Size: Code=6244 RO-data=628 RW-data=12 ZI-data=3100  
+".\Objects\main.axf" - 0 Error(s), 29 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.S32_SDK_DFP.1.5.0.pack
+                Keil.S32_SDK_DFP.1.5.0
+                NXP S32 SDK S32K14x Device Support
+   * Component: Startup Version: 2.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/S32K144HAxxxLLx
+  ./RTE/_Target_1
+  C:/Users/huuda/AppData/Local/Arm/Packs/Arm/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/huuda/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices
+  C:/Users/huuda/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:2.0.0
+      Include file:  platform/devices/device_registers.h
+      Source file:   platform/devices/startup.c
+      Include file:  platform/devices/S32K144/startup/system_S32K144.h
+      Source file:   platform/devices/S32K144/startup/system_S32K144.c
+      Source file:   platform/devices/S32K144/startup/armc/startup_S32K144.S
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
